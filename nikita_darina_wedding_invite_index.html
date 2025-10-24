@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Никита & Дарина — Приглашение на свадьбу</title>
+  <meta name="description" content="Приглашение на свадьбу Никиты и Дарины — 08.08.2026, Ресторан Зихия, г. Майкоп." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fffaf6;
+      --accent:#c06c84;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --maxw:980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg),#fff);
+      color:#222;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{width:100%;max-width:var(--maxw);background:var(--card);box-shadow:0 10px 30px rgba(20,20,20,0.08);border-radius:14px;overflow:hidden;}
+    header.hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center;padding:36px;background:linear-gradient(180deg, rgba(192,108,132,0.08), rgba(192,108,132,0.02));}
+    .names{font-family:"Playfair Display", serif;}
+    .names h1{margin:0;font-size:36px;line-height:1}
+    .names p{margin:8px 0 0;color:var(--muted)}
+    .hero-photo{height:180px;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#f6e9e9,#fff);display:flex;align-items:center;justify-content:center;}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    main.content{padding:28px 36px;display:grid;grid-template-columns:1fr 360px;gap:28px}
+    .card{background:transparent;padding:0}
+    h2{font-family:"Playfair Display",serif;margin:0 0 10px;font-size:20px}
+    p.lead{margin:0 0 14px;color:var(--muted);line-height:1.5}
+    .details{background:linear-gradient(180deg,#fff,#fff);padding:18px;border-radius:10px;margin-bottom:14px;border:1px solid rgba(0,0,0,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+    .info-item{padding:8px 10px;border-radius:8px;background:rgba(0,0,0,0.02);font-size:14px}
+    .muted{color:var(--muted);font-size:14px}
+    aside.side{position:relative;padding:0 0 28px 0;}
+    .rsvp{background:linear-gradient(180deg,#fff,#fff);border-radius:12px;padding:16px;border:1px solid rgba(0,0,0,0.04);margin-bottom:18px;}
+    .rsvp label{display:block;font-size:14px;margin-top:8px}
+    .rsvp input[type="text"], .rsvp input[type="email"], .rsvp select, .rsvp textarea{width:100%;padding:8px 10px;margin-top:6px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;text-decoration:none;cursor:pointer;margin-top:12px}
+    .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(192,108,132,0.12)}
+    .map{border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);margin-bottom:14px}
+    .gallery{display:flex;gap:8px;flex-wrap:wrap}
+    .gallery img{width:calc(50% - 4px);border-radius:8px;height:90px;object-fit:cover}
+    footer{padding:18px 36px;background:linear-gradient(180deg,#fff,#fff);border-top:1px solid rgba(0,0,0,0.03);display:flex;justify-content:space-between;align-items:center}
+    .print{font-size:13px;color:var(--muted)}
+    @media (max-width:880px){header.hero{grid-template-columns:1fr;gap:16px}main.content{grid-template-columns:1fr;gap:18px;padding:18px} .hero-photo{height:220px} aside.side{order:2}}
+    .center{display:flex;gap:10px;align-items:center}
+    .hidden{display:none}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header class="hero" aria-label="Шапка приглашения">
+      <div class="names">
+        <h1 id="coupleNames">Никита & Дарина</h1>
+        <p id="weddingDate">08.08.2026 — 15:30</p>
+        <p class="lead">Дорогие гости, будем рады видеть вас на нашем празднике — присоединяйтесь, чтобы разделить этот важный день!</p>
+        <div style="margin-top:14px;">
+          <a href="#rsvp" class="btn" onclick="document.getElementById('name').focus()">Подтвердить участие</a>
+          <a href="#" class="btn ghost" onclick="window.print()">Распечатать приглашение</a>
+        </div>
+      </div>
+      <div class="hero-photo" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop" alt="Пара">
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <article class="details" aria-labelledby="aboutTitle">
+          <h2 id="aboutTitle">Наша история</h2>
+          <p class="lead" id="aboutText">Мы встретились, полюбили друг друга и с радостью приглашаем вас разделить с нами этот день.</p>
+        </article>
+
+        <article class="details" aria-labelledby="cerTitle">
+          <h2 id="cerTitle">Детали</h2>
+          <div class="grid">
+            <div class="info-item">
+              <strong>Место</strong><br>
+              <span class="muted" id="ceremonyPlace">Ресторан Зихия, г. Майкоп</span>
+            </div>
+            <div class="info-item">
+              <strong>Начало</strong><br>
+              <span class="muted" id="ceremonyTime">08.08.2026, 15:30</span>
+            </div>
+            <div class="info-item">
+              <strong>Банкет</strong><br>
+              <span class="muted" id="banquetPlace">Ресторан Зихия</span>
+            </div>
+            <div class="info-item">
+              <strong>Дресс-код</strong><br>
+              <span class="muted" id="dressCode">Свободный элегантный стиль</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="details" aria-labelledby="giftsTitle">
+          <h2 id="giftsTitle">Подарки</h2>
+          <p class="lead">Ваше присутствие — лучший подарок. Если вы хотите подарить что-то ещё — пожалуйста, свяжитесь с Дариной по email.</p>
+        </article>
+
+        <article class="details" aria-labelledby="notesTitle">
+          <h2 id="notesTitle">Важно знать</h2>
+          <p class="lead">Парковка доступна у ресторана. Если есть вопросы по приезду — звоните по телефону внизу.</p>
+        </article>
+      </section>
+
+      <aside class="side" aria-label="Боковая панель">
+        <div class="rsvp" id="rsvp" tabindex="-1">
+          <h2>Подтвердите участие</h2>
+          <form id="rsvpForm" onsubmit="return sendRSVP(event)">
+            <label for="name">Имя и фамилия</label>
+            <input id="name" name="name" type="text" placeholder="Иван Иванов" required>
+
+            <label for="email">Email (для подтверждения)</label>
+            <input id="email" name="email" type="email" placeholder="example@mail.com">
+
+            <label for="guests">Количество гостей (включая вас)</label>
+            <select id="guests" name="guests" required>
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="more">Больше</option>
+            </select>
+
+            <label for="message">Сообщение (пожелания, ограничения по еде)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Например: без глютена"></textarea>
+
+            <div style="display:flex;gap:8px;align-items:center;">
+              <button class="btn" type="submit">Отправить RSVP</button>
+              <button class="btn ghost" type="button" onclick="saveDraft()">Сохранить черновик</button>
+            </div>
+
+            <p id="rsvpNotice" class="muted" style="margin-top:8px;font-size:13px;">
+              RSVP откроет ваш почтовый клиент. Или напишите нам: <a href="mailto:darina_lykova@mail.ru">darina_lykova@mail.ru</a>.
+            </p>
+          </form>
+        </div>
+
+        <div class="map" aria-label="Местоположение">
+          <h2 style="padding:12px 16px;margin:0">Место</h2>
+          <iframe style="width:100%;height:220px;border:0" src="https://www.google.com/maps?q=%D0%A0%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%20%D0%97%D0%B8%D1%85%D0%B8%D1%8F%20%D0%9C%D0%B0%D0%B9%D0%BA%D0%BE%D0%BF&output=embed" title="Карта Ресторан Зихия, Майкоп" loading="lazy"></iframe>
+          <div style="padding:12px">
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Ресторан+Зихия+Майкоп" target="_blank" rel="noopener">Открыть в Google Maps</a>
+          </div>
+        </div>
+
+        <div class="details" aria-labelledby="photosTitle">
+          <h2 id="photosTitle">Фотографии</h2>
+          <div class="gallery" aria-hidden="false">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Фото 1">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop" alt="Фото 2">
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="print">
+        Контакты организаторов: <a href="tel:+70000000000">+7 (000) 000-00-00</a> • <a href="mailto:darina_lykova@mail.ru">darina_lykova@mail.ru</a>
+      </div>
+      <div>
+        <button class="btn ghost" onclick="document.getElementById('coupleNames').textContent = prompt('Имена (например: Никита & Дарина)','Никита & Дарина')">Изменить имена</button>
+        <button class="btn" onclick="window.print()">Печать</button>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const settings = {
+      coupleNames: "Никита & Дарина",
+      weddingDate: "08.08.2026 — 15:30",
+      ceremonyPlace: "Ресторан Зихия, г. Майкоп",
+      ceremonyTime: "08.08.2026, 15:30",
+      banquetPlace: "Ресторан Зихия",
+      dressCode: "Свободный элегантный стиль",
+      aboutText: "Мы встретились, полюбили друг друга и с радостью приглашаем вас разделить с нами этот день.",
+      contactEmail: "darina_lykova@mail.ru",
+      contactPhone: "+7 (000) 000-00-00",
+      googleMapsQuery: "Ресторан Зихия Майкоп"
+    };
+
+    document.getElementById('coupleNames').textContent = settings.coupleNames;
+    document.getElementById('weddingDate').textContent = settings.weddingDate;
+    document.getElementById('ceremonyPlace').textContent = settings.ceremonyPlace;
+    document.getElementById('ceremonyTime').textContent = settings.ceremonyTime;
+    document.getElementById('banquetPlace').textContent = settings.banquetPlace;
+    document.getElementById('dressCode').textContent = settings.dressCode;
+    document.getElementById('aboutText').textContent = settings.aboutText;
+    document.querySelector('#rsvpNotice a').href = 'mailto:' + settings.contactEmail;
+    document.querySelector('footer .print a[href^="tel:"]').href = 'tel:' + settings.contactPhone;
+    document.querySelector('footer .print a[href^="mailto:"]').href = 'mailto:' + settings.contactEmail;
+
+    const mapIframe = document.querySelector('.map iframe');
+    const mapQuery = encodeURIComponent(settings.googleMapsQuery);
+    mapIframe.src = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+
+    const form = document.getElementById('rsvpForm');
+    const LS_KEY = 'wedding_invite_rsvp_nikita_darina';
+
+    function saveDraft(){
+      const payload = {
+        name: form.name.value,
+        email: form.email.value,
+        guests: form.guests.value,
+        message: form.message.value,
+        ts: new Date().toISOString()
+      };
+      localStorage.setItem(LS_KEY, JSON.stringify(payload));
+      alert('Черновик сохранён локально в вашем браузере.');
+    }
+
+    (function loadDraft(){
+      try{
+        const raw = localStorage.getItem(LS_KEY);
+        if(!raw) return;
+        const p = JSON.parse(raw);
+        if(p.name) form.name.value = p.name;
+        if(p.email) form.email.value = p.email;
+        if(p.guests) form.guests.value = p.guests;
+        if(p.message) form.message.value = p.message;
+      }catch(e){console.warn('Не удалось загрузить черновик', e);}
+    })();
+
+    function sendRSVP(e){
+      e.preventDefault();
+      const subject = encodeURIComponent('RSVP: ' + form.name.value.trim());
+      const bodyLines = [
+        `Имя: ${form.name.value.trim()}`,
+        `Email: ${form.email.value.trim()}`,
+        `Гостей: ${form.guests.value}`,
+        `Сообщение: ${form.message.value.trim()}`,
+        ``,
+        `Отправлено с сайта приглашения Никиты и Дарины`
+      ];
+      const body = encodeURIComponent(bodyLines.join('\\n'));
+      const mailto = `mailto:${settings.contactEmail}?subject=${subject}&body=${body}`;
+      localStorage.setItem(LS_KEY + '_last_sent', JSON.stringify({name: form.name.value, guests: form.guests.value, ts: new Date().toISOString()}));
+      window.location.href = mailto;
+      alert('Открылся почтовый клиент для отправки RSVP. Если письмо не отправилось автоматически — отправьте его вручную на ' + settings.contactEmail);
+      return false;
+    }
+  </script>
+</body>
+</html>
